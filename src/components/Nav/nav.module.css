@@ -1,0 +1,21 @@
+.nav{
+    grid-area: nav;
+    background-color: cornflowerblue;
+    display: block;
+
+    }
+
+    .nav_a{
+        display: block;
+font-family: 'Courier New', Courier, monospace;
+margin-top: 10px;
+font-weight: 300;
+font-size: 25px;
+text-decoration: none;
+color: blanchedalmond;
+    }
+.active{
+    color: burlywood;
+}
+
+

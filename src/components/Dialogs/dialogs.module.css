@@ -1,0 +1,28 @@
+.dialogs{
+display: grid;
+grid-template-columns: 4fr 10fr;
+
+}
+
+.dealogsItems{
+padding: 10px;
+
+}
+.dealogsItems .active{
+    color: gold;
+    
+    }
+.dialog{
+    
+}
+.messages{
+    padding: 10px;
+}
+.message{
+    padding: 10px;
+}
+.links{
+    text-decoration: none;
+    padding: 10px;
+    margin-top: 30px;
+}
