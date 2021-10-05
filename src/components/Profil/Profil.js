@@ -2,7 +2,7 @@ import MyPosts from "./MyPosts/MyPosts"
 import profil from "./profil.module.css"
 import ProfileInfo from "./ProfileInfo/ProfileInfo"
 
-function Profil(){
+function Profil(props){
 
 
 
@@ -11,7 +11,7 @@ function Profil(){
         <div className={profil.profil}>
 <h1>Profil</h1>
 <ProfileInfo/>
-<MyPosts/>
+<MyPosts posts={props.profilePage.posts} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>
         </div>
     )
 }

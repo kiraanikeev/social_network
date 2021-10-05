@@ -1,26 +1,25 @@
 import myPosts from "./MyPosts.module.css"
 import posts from './Posts.mobule.css'
+import Post from './Post/Post'
+import React from 'react'
+
 function MyPosts(props){
 
 
-    const Post = (props)=>{
+   
 
-        return(
-            <div>
-           {props.message}{ props.likesCount}
-        </div>
-        )
-    }
+    const postElem= props.posts.map(el=>(<Post message={el.message} likesCount={ ' ' +  el.likesCounter} />))
+ let newPostElement = React.createRef();
+ let addPost = ()=>{
+    //  let text = newPostElement.current.value;
+     props.addPost();
+    //  newPostElement.current.value = "";
+ }
 
-    let postData =[
-        {id: 1, message: 'gssgfsfsg', likesCounter:12},
-        {id: 2, message: 'gwrwrg', likesCounter:2},
-        {id: 3, message: 'vxxxxfsg', likesCounter:19},
-        {id: 4, message: 'vvv333gfsfsg', likesCounter:54}
-    ]
-
-    const postElem= postData.map(el=>(<Post message={el.message} likesCount={ ' ' +  el.likesCounter} />))
- 
+ let onPostChange=()=>{
+    let text = newPostElement.current.value;
+    props.updateNewPostText(text);
+ }
 
 
     return(
@@ -28,18 +27,15 @@ function MyPosts(props){
         <div className={myPosts.myPosts}>
 <h1>MyPosts</h1>
 <div>
-<textarea></textarea>
+<textarea onChange={onPostChange} ref = {newPostElement} value={props.newPostText}></textarea>
 
 </div>
-<button>Add post</button>
+<button onClick={addPost}>Add post</button>
 
 
 
 <div className={posts.posts}>
 {postElem}
-    {/* <Post message={postData[0].message} likesCount={postData[0].likesCounter} />
-    <Post message={postData[1].message} likesCount={postData[1].likesCounter} />
-    <Post message={postData[2].message} likesCount={postData[2].likesCounter} /> */}
 </div>
         </div>
 
