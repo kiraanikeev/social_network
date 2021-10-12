@@ -1,18 +1,14 @@
-import MyPosts from "./MyPosts/MyPosts"
-import profil from "./profil.module.css"
-import ProfileInfo from "./ProfileInfo/ProfileInfo"
+import React from 'react';
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
-function Profil(props){
-
-
-
-    return(
-
-        <div className={profil.profil}>
-<h1>Profil</h1>
-<ProfileInfo/>
-<MyPosts posts={props.profilePage.posts} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>
+const Profile = () => {
+    return (
+        <div>
+            <ProfileInfo />
+            <MyPostsContainer />
         </div>
     )
 }
-export default Profil;
+
+export default Profile;

@@ -1,3 +1,7 @@
+import dialogeReducer from "./dialogeReducer";
+import profileReducer from "./profileReducer";
+import sidebarReducer from "./sidebarReducer";
+import usersReduser from "./usersReduser"
 let store = {
     _state : {
         profilePage:{
@@ -7,7 +11,7 @@ let store = {
                 {id: 3, message: 'vxxxxfsg', likesCounter:19},
                 {id: 4, message: 'vvv333gfsfsg', likesCounter:54}
             ],
-            newPostText: 'text'
+            newPostText: ''
         },
         dialogePage:{
             dialogs:[
@@ -24,34 +28,33 @@ let store = {
                 {id: 3, message: 'How are you&'},
                 {id: 4, message: 'Cannot complaine'},
                 {id: 5, message: 'Andyou&'},
-            ]
+            ],
+            newMessageBody: ''
         },
         sidebar: {}
         },
+        
   _callsubscriber(){     
        console.log('_callsubscriber');
         },
+
   getState(){
             return this._state
         },
-  addPost (){
-            let newPost = {
-                id:5,
-                message: this._state.profilePage.newPostText,
-                likesCounter: 0
-            };
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callsubscriber(this._state);
-        },
-  updateNewPostText(newText){
-        this._state.profilePage.newPostText = newText;
-        this._callsubscriber(this._state);
-        },
   subscribe(observer){
             this._callsubscriber = observer;
-        }
-}
+        },
+
+ dispatch(action){
+
+            this._state.profilePage = profileReducer( this._state.profilePage, action);
+            this._state.dialogePage = dialogeReducer(this._state.dialogePage, action);
+            this._state.sidebar = sidebarReducer( this._state.sidebar, action);
+            this._callsubscriber(this._state);
+
+}}
+
+
 
 
 window.store = store;

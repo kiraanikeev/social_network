@@ -3,7 +3,6 @@ import profileInfo from "./ProfileInfo.module.css"
 function ProfileInfo(){
 
 
-
     return(
 
         <div className={profileInfo.profileInfo}>
