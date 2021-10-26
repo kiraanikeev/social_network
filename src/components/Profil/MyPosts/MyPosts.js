@@ -9,7 +9,7 @@ function MyPosts(props){
 
    let state = props.profilePage;
 
-    const postElem= state.posts.map(el=>(<Post message={el.message} likesCount={ ' ' +  el.likesCounter} />))
+    const postElem= state.posts.map(item=>(<Post key={item.id} message={item.message} likesCount={ ' ' +  item.likesCounter} />))
  let newPostText = state.newPostText;
 
 

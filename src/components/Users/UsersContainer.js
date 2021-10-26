@@ -7,7 +7,9 @@ import Users from "./Users";
 //которые нам в state нужны
 let mapStateToProps = (state)=>{
     return{
+    
         users: state.usersPage.users
+      
     }
 }
 //  mapDispatchToProps служит чтобы передавать 
@@ -25,5 +27,4 @@ setUsers: (users)=>{
 }
     }
 }
-// export default connectAdvanced (mapStateToProps, mapDispatchToProps)(Users);
 export default connect(mapStateToProps, mapDispatchToProps)(Users);
