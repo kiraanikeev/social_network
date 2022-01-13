@@ -10,6 +10,7 @@ function Nav(){
         <div className={nav.nav}>
 <NavLink to="/profil"  className={nav.nav_a} activeClassName={nav.active}>Ptofile</NavLink>
 <NavLink to="/dialogs" className={nav.nav_a} activeClassName={nav.active}>Messages</NavLink>
+<NavLink to="/users" className={nav.nav_a} activeClassName={nav.active}>Users</NavLink>
 
 <a className={nav.nav_a}>News</a>
 <a className={nav.nav_a}>Music</a>

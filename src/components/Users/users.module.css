@@ -3,3 +3,19 @@ width:100px;
 height: 100px;
 
 }
+.selectedPage{
+    font-weight: bolder;
+}
+
+.selectedPage:hover{
+    cursor: pointer;
+}
+
+
+.stylePage:hover{
+    cursor: pointer;
+}
+
+.stylePage{
+    cursor: pointer;
+}
